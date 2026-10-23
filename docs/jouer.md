@@ -9,6 +9,8 @@ Jouez vous-même avec n'importe lequel de vos comptes, depuis votre propre Minec
 connecte à Kairn sur votre PC, et Kairn rejoint le serveur avec le compte choisi (connexion
 Microsoft, proxy et `/login` compris). Le serveur ne voit que ce compte.
 
+![La page Jouer avec un compte](assets/jouer.png)
+
 1. Page **Jouer avec un compte** : choisissez le **compte** et le **port local** (25566 par défaut),
    puis **Démarrer**.
 2. Dans Minecraft, **même version que le serveur** : **Multijoueur** › **Connexion directe** ›

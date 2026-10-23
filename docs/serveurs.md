@@ -30,6 +30,8 @@ rejoindre un mode dès sa connexion (réglage du compte).
 
 Comment récupérer chaque kit sur ce serveur, puisque ça change partout :
 
+![Réglage des kits d’un serveur](assets/serveur-kits.png)
+
 - **Pour l'obtenir** : les étapes, dans l'ordre (voir [Étapes](#étapes)) ;
 - **Objet du kit dans le dernier menu** et **titre de ce menu** ;
 - **Puis cliquer** : les confirmations éventuelles (« Confirmer »…) ;

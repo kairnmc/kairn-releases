@@ -7,6 +7,14 @@ rejoués, et vous pouvez jouer vous-même avec n'importe lequel de vos comptes.
 **[📘 Guide d'utilisation](https://kairnmc.github.io/kairn-releases/)** ·
 **[⬇️ Télécharger la dernière version](https://github.com/kairnmc/kairn-releases/releases/latest)**
 
+![Vos comptes, leur statut, leurs kits prêts et ce que le serveur affiche (gemmes, argent)](https://kairnmc.github.io/kairn-releases/assets/comptes.png)
+
+## Aperçu
+
+| Les kits de chaque serveur, sans code | Jouer vous-même avec un de vos comptes |
+|---|---|
+| ![Réglage des kits d’un serveur : commande, menus, délai](https://kairnmc.github.io/kairn-releases/assets/serveur-kits.png) | ![Jouer avec un compte depuis votre Minecraft](https://kairnmc.github.io/kairn-releases/assets/jouer.png) |
+
 ## Installer
 
 1. Téléchargez `Kairn-Setup-x.y.z.exe` dans la [dernière version](https://github.com/kairnmc/kairn-releases/releases/latest)

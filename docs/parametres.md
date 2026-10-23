@@ -7,6 +7,8 @@ nav_order: 7
 
 Page **Paramètres** : modifiez puis **Enregistrer** (l'apparence s'applique tout de suite).
 
+![La page Paramètres](assets/parametres.png)
+
 ## Apparence
 
 Quatre palettes : Redstone (par défaut), Améthyste, Lapis, Diamant.

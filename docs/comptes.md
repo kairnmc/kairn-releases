@@ -8,6 +8,8 @@ nav_order: 2
 La page **Comptes** liste les comptes du serveur choisi en haut à gauche. Chaque serveur a ses
 propres comptes.
 
+![La page Comptes](assets/comptes.png)
+
 ## Ajouter un compte
 
 Bouton **Ajouter un compte**, puis :
