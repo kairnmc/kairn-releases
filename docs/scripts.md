@@ -11,9 +11,16 @@ Le groupe **Scripts** du menu réunit tout ce qui fait agir vos comptes tout seu
 
 Un **plugin** est un script : farmer, récupérer des récompenses, échanger… La page **Plugins** les liste.
 
-1. **Choisir des comptes** (ou cochez-les dans Comptes, puis **Lancer un script**).
-2. **Lancer** sur le plugin voulu. S'il a des réglages, un formulaire s'ouvre d'abord (prérempli
-   avec vos derniers choix sur ce serveur).
+1. **Lancer** sur le plugin voulu : une fenêtre demande pour quels comptes. Cherchez par nom, ou
+   utilisez les raccourcis **Tous**, **En ligne** et un par tag ; les comptes déjà cochés dans la page
+   Comptes sont pré-cochés.
+2. **Suivant** : s'il a des réglages, le formulaire s'ouvre (prérempli avec vos derniers choix sur ce
+   serveur), puis **Lancer**.
+
+Les chaînes, les enregistrements et les kits se lancent de la même façon.
+
+Un plugin peut être **réservé à certains serveurs** (comme les plugins faits pour un serveur précis) :
+il n'apparaît alors que quand vous travaillez sur l'un d'eux.
 
 - **Officiel** : un plugin fourni et mis à jour par l'auteur de Kairn. Il s'installe tout seul et
   ne se modifie pas (ses mises à jour le remplaceraient).

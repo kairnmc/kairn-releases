@@ -34,7 +34,7 @@ Ou directement en jeu, dans le chat (ces commandes ne partent jamais au serveur)
 
 | Commande | Effet |
 |---|---|
-| `/mb rec [nom]` | commence à enregistrer |
-| `/mb pause` | met en pause |
-| `/mb reprise` | reprend |
-| `/mb stop` | termine et enregistre |
+| `/kairn rec [nom]` | commence à enregistrer |
+| `/kairn pause` | met en pause |
+| `/kairn reprise` | reprend |
+| `/kairn stop` | termine et enregistre |
