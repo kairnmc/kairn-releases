@@ -13,10 +13,25 @@ rejoués, et même jouer vous-même avec n'importe lequel de vos comptes.
 
 1. Téléchargez le dernier installateur : [Kairn Setup](https://github.com/kairnmc/kairn-releases/releases/latest)
    (fichier `Kairn Setup x.y.z.exe`).
-2. Lancez-le. Windows affiche peut-être « Windows a protégé votre ordinateur » : cliquez sur
-   **Informations complémentaires**, puis **Exécuter quand même**. L'installateur n'est pas encore
-   signé ; les mises à jour suivantes s'installent sans cet avertissement.
-3. Kairn s'ouvre et s'installe dans votre session Windows (pas besoin de droits administrateur).
+2. Lancez-le. Kairn s'installe dans votre session Windows (pas besoin de droits administrateur) et
+   s'ouvre tout seul.
+
+### Si Windows bloque l'installateur
+
+L'installateur n'est pas encore signé : au premier lancement, Windows peut afficher
+« **Windows a protégé votre ordinateur** ».
+
+- **Un lien « Informations complémentaires » apparaît** : cliquez dessus, puis sur **Exécuter quand même**.
+- **Seul le bouton « Ne pas exécuter » apparaît** (Windows réglé plus strictement) : fermez la fenêtre,
+  puis débloquez le fichier :
+  1. clic droit sur `Kairn-Setup-x.y.z.exe` › **Propriétés** ;
+  2. en bas de l'onglet **Général**, cochez **Débloquer** ①, puis **OK** ② ;
+  3. relancez le fichier : il s'installe normalement.
+
+![Propriétés de l'installateur : cocher « Débloquer », puis OK](assets/debloquer.png)
+
+Seule la première installation est concernée : les mises à jour, téléchargées par Kairn lui-même,
+s'installent sans cet avertissement.
 
 Kairn se met ensuite à jour tout seul : voir [Mises à jour](parametres.html#mises-à-jour).
 

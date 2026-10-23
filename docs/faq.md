@@ -23,8 +23,9 @@ L'auteur de Kairn a retiré cet accès : contactez-le.
 ## Installation et mises à jour
 
 **Windows bloque l'installateur**
-Cliquez sur **Informations complémentaires**, puis **Exécuter quand même** (voir
-[Installer](index.html#installer)).
+Cliquez sur **Informations complémentaires**, puis **Exécuter quand même**. S'il n'y a que « Ne pas
+exécuter » : clic droit sur l'installateur › **Propriétés** › cochez **Débloquer** › **OK**, puis
+relancez-le (voir [Si Windows bloque l'installateur](index.html#si-windows-bloque-linstallateur)).
 
 **La mise à jour ne s'installe pas**
 **Redémarrer** attend que les bots soient déconnectés, les scripts finis et la partie arrêtée. Sinon,
