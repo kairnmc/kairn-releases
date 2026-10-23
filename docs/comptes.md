@@ -82,6 +82,10 @@ ajoutez-les depuis la fiche ou la sélection. Supprimer un tag ne supprime pas l
 
 ## Importer et exporter
 
+**Un compte déjà sur un autre serveur** : **Ajouter un compte** › **D'un autre serveur**, choisissez le
+serveur puis les comptes (ou **Tous**). Ils arrivent avec leur mot de passe de serveur, leur proxy et
+leurs tags, sans rien retaper ; les comptes Microsoft restent connectés.
+
 Menu **⋯** de la page :
 
 - **Exporter des comptes** : tous les comptes du serveur ou la sélection, dans un fichier. Cochez

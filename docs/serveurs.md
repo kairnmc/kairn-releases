@@ -15,6 +15,10 @@ sélecteur en haut à gauche ; **Modifier ce serveur…** ouvre son profil.
 Minecraft**. Le bouton **Détecter** demande sa version au serveur. Ensuite **Créer**. Les réglages
 ci-dessous apparaissent quand vous modifiez le serveur.
 
+**Partir d'un serveur connu** (en haut du formulaire) : pour les serveurs déjà préparés, par exemple
+PikaNetwork KitPvP, l'adresse, la version, les modes de jeu et les valeurs du scoreboard sont remplis
+pour vous. La liste s'enrichit toute seule, sans mise à jour de Kairn.
+
 ## Supprimer un serveur
 
 **Modifier ce serveur…** › en bas, **Supprimer ce serveur…**. Ses comptes partent avec lui (avec leurs
