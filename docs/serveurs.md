@@ -15,6 +15,14 @@ sélecteur en haut à gauche ; **Modifier ce serveur…** ouvre son profil.
 Minecraft**. Le bouton **Détecter** demande sa version au serveur. Ensuite **Créer**. Les réglages
 ci-dessous apparaissent quand vous modifiez le serveur.
 
+## Supprimer un serveur
+
+**Modifier ce serveur…** › en bas, **Supprimer ce serveur…**. Ses comptes partent avec lui (avec leurs
+tags et mots de passe enregistrés), ainsi que ses kits, valeurs suivies, chaînes, enregistrements et
+planifications ; les bots connectés sont déconnectés. Kairn refuse tant qu'un lancement ou une partie
+utilise un de ses comptes : arrêtez-le d'abord. Pour garder les comptes, exportez-les avant
+(voir [Comptes](comptes.html#importer-et-exporter)).
+
 ## Modes de jeu
 
 Les modes du serveur (Skyblock, Factions…) et comment les rejoindre, pour qu'un bot y aille tout seul :
