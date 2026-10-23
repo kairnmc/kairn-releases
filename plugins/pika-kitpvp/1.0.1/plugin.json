@@ -1,0 +1,114 @@
+{
+  "name": "Pika — Kits KitPvP",
+  "version": "1.0.1",
+  "description": "PikaNetwork, KitPvP : récupère les Classes (/gkit) et les envoie au compte principal, et les kits choisis (/kit). Comptes crackés ou premium. Planifiable.",
+  "main": "index.ts",
+  "servers": [
+    "*.pika-network.net"
+  ],
+  "scheduleKey": "pika:kitpvp",
+  "settings": [
+    {
+      "key": "main",
+      "label": "Pseudo du compte principal",
+      "type": "text",
+      "default": "",
+      "help": "Les Classes récupérées (armor stands) lui sont envoyées par /maildelivery. Vide : elles restent sur chaque compte."
+    },
+    {
+      "key": "classes",
+      "label": "Récupérer les Classes (/gkit)",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "classesOnly",
+      "label": "Seulement ces Classes",
+      "type": "text",
+      "default": "",
+      "help": "Noms séparés par des virgules (ex. : Keys, Boosters). Vide : toutes les Classes débloquées du compte."
+    },
+    {
+      "key": "monthly",
+      "label": "Monthly Kit",
+      "type": "boolean",
+      "default": false,
+      "help": "Un seul kit par vie sur Pika : seul le premier kit coché et prêt est pris à chaque passage."
+    },
+    {
+      "key": "weekly",
+      "label": "Weekly Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "daily",
+      "label": "Daily Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "vip",
+      "label": "Vip Kit",
+      "type": "boolean",
+      "default": false,
+      "help": "Les kits de grade ne sont pris que par les comptes qui ont le grade ; les autres les passent."
+    },
+    {
+      "key": "god",
+      "label": "God Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "legend",
+      "label": "Legend Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "ultimate",
+      "label": "Ultimate Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "baron",
+      "label": "Baron Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "omega",
+      "label": "Omega Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "omegaplus",
+      "label": "Omega+ Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "pikastar",
+      "label": "Pika+ ✭ Tier Kit",
+      "type": "boolean",
+      "default": false,
+      "help": "Délai commun à tous les modes de Pika : une fois tous les 30 jours sur un seul mode."
+    },
+    {
+      "key": "pikaheart",
+      "label": "Pika+ ❤ Tier Kit",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "reset",
+      "label": "Oublier les délais notés",
+      "type": "boolean",
+      "default": false,
+      "help": "Pour ce lancement : réessaie tout, même ce que Kairn croit en délai (après une remise à zéro des kits par Pika)."
+    }
+  ]
+}
