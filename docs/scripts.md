@@ -27,6 +27,8 @@ il n'apparaît alors que quand vous travaillez sur l'un d'eux.
 - **IA** : le plugin utilise l'IA locale (voir [Accès IA](ia.html#ia-locale-pour-les-plugins)).
 - **Nouveau plugin** crée un dossier avec un exemple commenté ; **Dossier des plugins** l'ouvre.
   Voir [Écrire un plugin](plugins.html).
+- La **corbeille** d'un plugin le supprime, avec les planifications qui le lancent (pas pendant qu'il
+  tourne). Un plugin officiel ne se supprime pas.
 
 ## Lancements
 
@@ -44,8 +46,11 @@ Le compteur sur **Activité** indique ce qui attend votre réponse.
 
 Une planification relance un plugin pour chaque compte dès que son délai est passé (par exemple
 `kit:pvp`), tant que Kairn est ouvert. Créez-la avec **Planifier** sur un plugin : donnez le nom du
-délai que le plugin note. La page **Planifications** montre, par compte, quand aura lieu le prochain
-lancement ; un interrupteur la met en pause.
+délai que le plugin note (souvent déjà rempli par le plugin). La page **Planifications** montre, par
+compte, quand aura lieu le prochain lancement ; un interrupteur la met en pause.
+
+Un délai seul ne relance rien : dans la fiche d'un compte (onglet **Kits**), chaque délai noté par un
+plugin dit s'il est **planifié** ou **non planifié**.
 
 ## Chaînes
 

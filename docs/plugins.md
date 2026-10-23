@@ -69,6 +69,7 @@ constructeur `private x` : non (une erreur claire vous le dit). Du JavaScript (`
 | `settings` | Le formulaire montré avant chaque lancement (30 réglages au plus). |
 | `ai` | `true` pour utiliser l'IA locale (`ctx.ai`). |
 | `servers` | Les serveurs pour lesquels il est fait, ex. `["play.exemple.fr"]` ou `["*.exemple.fr"]` (le domaine et ses sous-domaines). Ailleurs, il n'apparaît pas et ne se lance pas. Absent : tous les serveurs. |
+| `scheduleKey` | Le nom de délai avec lequel le planifier, ex. `"monplugin:passage"` : « Planifier » le propose déjà rempli. Le plugin note ce délai (`ctx.cooldowns.set`) pour dire quand le relancer. |
 
 **Réglages** : types `text` (`required`), `number` (`min`, `max`, `integer`), `boolean`, `select`
 (`options`) ; `default` et `help` partout. Le formulaire est prérempli avec les derniers choix faits
