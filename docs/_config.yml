@@ -1,0 +1,22 @@
+# Kairn's user guide, published to docs/ of kairnmc/kairn-releases by `node scripts/admin.mjs publish-docs`.
+# GitHub Pages builds it (Jekyll, theme loaded by GitHub): nothing to build locally.
+title: Kairn
+description: Guide d'utilisation de Kairn
+lang: fr
+url: https://kairnmc.github.io
+baseurl: /kairn-releases
+remote_theme: just-the-docs/just-the-docs@v0.12.0
+plugins:
+  - jekyll-remote-theme
+color_scheme: dark
+search_enabled: true
+search:
+  heading_level: 3
+  button: true
+heading_anchors: true
+back_to_top: true
+back_to_top_text: Haut de page
+nav_external_links:
+  - title: Télécharger Kairn
+    url: https://github.com/kairnmc/kairn-releases/releases/latest
+footer_content: Kairn — guide d'utilisation. Une question ? Contactez l'auteur de Kairn.
