@@ -8,11 +8,28 @@ baseurl: /kairn-releases
 remote_theme: just-the-docs/just-the-docs@v0.12.0
 plugins:
   - jekyll-remote-theme
-color_scheme: dark
+color_scheme: kairn
+logo: /assets/logo.svg
+# Callouts: `{: .astuce }` etc. under a paragraph or a > quote. Colors follow the app's state colors
+# (_sass/custom/custom.scss); `color` here only picks just-the-docs' fallback.
+callouts_level: loud
+callouts:
+  astuce:
+    title: Astuce
+    color: green
+  attention:
+    title: Attention
+    color: yellow
+  important:
+    title: Important
+    color: red
+  note:
+    title: À savoir
+    color: blue
 search_enabled: true
 search:
   heading_level: 3
-  button: true
+  button: false
 heading_anchors: true
 back_to_top: true
 back_to_top_text: Haut de page

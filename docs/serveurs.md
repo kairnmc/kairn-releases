@@ -5,29 +5,27 @@ nav_order: 3
 
 # Serveurs
 
-Chaque serveur a son profil : son adresse, sa version, et tout ce qui varie d'un serveur à l'autre
-(modes de jeu, kits, argent affiché…). Choisissez le serveur sur lequel vous travaillez avec le
-sélecteur en haut à gauche ; **Modifier ce serveur…** ouvre son profil.
+Ici, vous apprenez à Kairn comment marche chaque serveur : son adresse, sa version, et tout ce qui
+varie d'un serveur à l'autre (modes de jeu, kits, argent affiché…).
+
+Choisissez le serveur sur lequel vous travaillez avec le sélecteur en haut à gauche ;
+**Modifier ce serveur…** ouvre son profil.
 
 ## Ajouter un serveur
 
-**Ajouter un serveur…**, puis : un **nom**, l'**adresse** (port 25565 par défaut), la **version
-Minecraft**. Le bouton **Détecter** demande sa version au serveur. Ensuite **Créer**. Les réglages
-ci-dessous apparaissent quand vous modifiez le serveur.
+1. **Ajouter un serveur…**
+2. Donnez un **nom**, l'**adresse** (port 25565 par défaut) et la **version Minecraft**. Le bouton
+   **Détecter** demande sa version au serveur.
+3. **Créer**.
 
+Les réglages de cette page (modes de jeu, kits, valeurs…) apparaissent quand vous modifiez le serveur.
+
+{: .astuce }
 **Partir d'un serveur connu** (en haut du formulaire) : pour les serveurs déjà préparés, par exemple
 PikaNetwork KitPvP, l'adresse, la version, les modes de jeu et les valeurs du scoreboard sont remplis
 pour vous. La liste s'enrichit toute seule, sans mise à jour de Kairn.
 
-## Supprimer un serveur
-
-**Modifier ce serveur…** › en bas, **Supprimer ce serveur…**. Ses comptes partent avec lui (avec leurs
-tags et mots de passe enregistrés), ainsi que ses kits, valeurs suivies, chaînes, enregistrements et
-planifications ; les bots connectés sont déconnectés. Kairn refuse tant qu'un lancement ou une partie
-utilise un de ses comptes : arrêtez-le d'abord. Pour garder les comptes, exportez-les avant
-(voir [Comptes](comptes.html#importer-et-exporter)).
-
-## Modes de jeu
+## Ajouter des modes de jeu
 
 Les modes du serveur (Skyblock, Factions…) et comment les rejoindre, pour qu'un bot y aille tout seul :
 
@@ -35,30 +33,39 @@ Les modes du serveur (Skyblock, Factions…) et comment les rejoindre, pour qu'u
 - ou **Choisir dans un menu** : clic droit sur un objet (boussole…) ou une commande qui ouvre le
   menu, puis l'objet à cliquer (une partie de son nom suffit).
 
-**Arrivée confirmée par** : un changement de serveur, un message du chat, ou rien. Un compte peut
-rejoindre un mode dès sa connexion (réglage du compte).
+**Arrivée confirmée par** : un changement de serveur, un message du chat, ou rien.
 
-## Kits
+{: .astuce }
+Un compte peut rejoindre un mode dès sa connexion : c'est un réglage du [compte](comptes.html#les-options-du-compte).
 
-Comment récupérer chaque kit sur ce serveur, puisque ça change partout :
+## Récupérer ses kits automatiquement
+
+Chaque serveur donne ses kits à sa façon : décrivez ici comment récupérer chacun.
 
 ![Réglage des kits d’un serveur](assets/serveur-kits.png)
 
-- **Pour l'obtenir** : les étapes, dans l'ordre (voir [Étapes](#étapes)) ;
-- **Objet du kit dans le dernier menu** et **titre de ce menu** ;
-- **Puis cliquer** : les confirmations éventuelles (« Confirmer »…) ;
-- **Délai si le serveur n'en affiche pas** : le temps à attendre entre deux récupérations.
+| Réglage | Ce qu'il faut y mettre |
+|---|---|
+| **Pour l'obtenir** | Les étapes, dans l'ordre (voir [Les étapes](#les-étapes)). |
+| **Objet du kit dans le dernier menu** et **titre de ce menu** | L'objet à cliquer et le menu où il se trouve. |
+| **Puis cliquer** | Les confirmations éventuelles (« Confirmer »…). |
+| **Délai si le serveur n'en affiche pas** | Le temps à attendre entre deux récupérations. |
+
+### Essayer un kit
 
 **Essayer sur** un compte en ligne : **Relever sans récupérer** (lit le délai restant) ou
-**Récupérer**, avec un journal de ce qui s'est passé. L'essai utilise le kit tel que vous l'écrivez,
-sans l'enregistrer.
+**Récupérer**, avec un journal de ce qui s'est passé.
 
-Les kits prêts se récupèrent depuis la page **Kits**, la sélection de comptes, ou la fiche d'un compte.
+{: .note }
+L'essai utilise le kit tel que vous l'écrivez, sans l'enregistrer.
 
-## Valeurs suivies
+Les kits prêts se récupèrent ensuite depuis la page [Kits](scripts.html#récupérer-les-kits), la
+sélection de comptes, ou la fiche d'un compte.
+
+## Suivre l'argent, les gemmes et autres valeurs
 
 L'argent, les gemmes, les tokens… ne s'appellent pas pareil ni ne s'affichent au même endroit selon
-les serveurs. Pour chaque valeur :
+les serveurs. Ces **valeurs suivies** peuvent s'afficher en colonnes dans la page Comptes. Pour chaque valeur :
 
 - un **nom** (« Gemmes ») ;
 - la **source** : le scoreboard, l'action bar, la réponse à une commande (`/money`), ou un menu ;
@@ -66,28 +73,53 @@ les serveurs. Pour chaque valeur :
 - **nombre** (pour additionner) et **colonne du tableau** (pour l'afficher dans Comptes) ;
 - pour une commande ou un menu : la lire **toutes les N minutes**.
 
+{: .astuce }
 Le plus simple : **Écran de** un compte en ligne affiche ce que voit ce compte ; cliquez sur la ligne
-qui contient la valeur, Kairn la reconnaît. Un aperçu montre la valeur lue. Une commande ou un menu
-n'est lu que quand aucun script n'utilise le compte.
+qui contient la valeur, Kairn la reconnaît. Un aperçu montre la valeur lue.
 
-## Échanges
+{: .note }
+Une commande ou un menu n'est lu que quand aucun script n'utilise le compte.
+
+## Régler les échanges entre comptes
 
 Les commandes et textes du `/trade` du serveur, pour les scripts qui échangent des objets entre
-comptes : commande pour demander et pour accepter (`{player}` est remplacé par le pseudo), titre de
-la fenêtre d'échange, bouton « accepter », message de réussite.
+comptes :
 
-## Profil des comptes
+- commande pour demander et pour accepter (`{player}` est remplacé par le pseudo) ;
+- titre de la fenêtre d'échange ;
+- bouton « accepter » ;
+- message de réussite.
+
+## Afficher le profil des comptes
 
 Un **plugin de profil** lit ce que le serveur affiche pour chaque compte (grade, île…) ; ses champs
 apparaissent dans l'aperçu des comptes. Voir [Écrire un plugin](plugins.html#plugin-de-profil).
 
-## Étapes
+## Les étapes
 
-Kits, menus et valeurs utilisent des **étapes** (8 au plus), faites dans l'ordre :
+Kits, menus et valeurs utilisent des **étapes**, faites dans l'ordre :
 
 - **Commande** (`/kit`) ;
 - **Clic sur un PNJ** (clic droit ou frapper), reconnu par le texte au-dessus de lui ;
 - **Objet en main** (clic droit sur un objet de la barre) ;
 - **Clic dans le menu** (avec, si besoin, le titre du menu attendu).
 
-La première étape ne peut pas être un clic dans un menu.
+{: .note }
+8 étapes au plus. La première étape ne peut pas être un clic dans un menu.
+
+## Supprimer un serveur
+
+**Modifier ce serveur…** › en bas, **Supprimer ce serveur…**.
+
+{: .attention }
+Ses comptes partent avec lui (avec leurs tags et mots de passe enregistrés), ainsi que ses kits,
+valeurs suivies, chaînes, enregistrements et planifications ; les bots connectés sont déconnectés.
+Pour garder les comptes, exportez-les avant (voir [Importer et exporter des comptes](comptes.html#importer-et-exporter-des-comptes)).
+
+{: .note }
+Kairn refuse tant qu'un lancement ou une partie utilise un de ses comptes : arrêtez-le d'abord.
+
+## Et ensuite ?
+
+Le serveur est prêt : [ajoutez vos comptes](comptes.html#ajouter-un-compte), puis
+[récupérez leurs kits](scripts.html#récupérer-les-kits) ou lancez des [scripts](scripts.html).

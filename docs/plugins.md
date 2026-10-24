@@ -11,6 +11,20 @@ compte y est un **vrai bot [mineflayer](https://github.com/PrismarineJS/mineflay
 mineflayer sait faire, votre plugin le peut. Kairn ajoute par-dessus ce qui est pénible à écrire soi-même
 (connexions, menus des serveurs, kits, délais, échanges, questions à l'utilisateur…).
 
+{: .note }
+Cette page s'adresse à ceux qui veulent écrire leur propre plugin. Pour simplement utiliser les
+plugins, voir [Lancer un plugin](scripts.html#lancer-un-plugin).
+
+**Par où commencer ?**
+
+- Premier plugin : [Démarrer](#démarrer), puis [plugin.json](#pluginjson) et [Le script](#le-script).
+- Faire agir les bots : [Utiliser mineflayer](#utiliser-mineflayer) et [Les outils de Kairn](#les-outils-de-kairn-ctx).
+- Autres sortes de plugins : [Étape de chaîne](#étape-de-chaîne), [Interception](#interception-jouer-avec-un-compte),
+  [Plugin de profil](#plugin-de-profil).
+- Quand ça ne marche pas : [Déboguer](#déboguer) et [Bonnes pratiques](#bonnes-pratiques).
+
+**Sommaire complet**
+
 1. TOC
 {:toc}
 
@@ -252,7 +266,7 @@ await ctx.trade(bot, 'Acheteur', {
 ```
 
 `walkTo` : erreur claire si aucun chemin, au bout de 60 s par défaut (`timeoutMs`). `trade` utilise le
-`/trade` réglé dans le [profil du serveur](serveurs.html#échanges) ; avec un joueur, le bot n'accepte
+`/trade` réglé dans le [profil du serveur](serveurs.html#régler-les-échanges-entre-comptes) ; avec un joueur, le bot n'accepte
 que si l'offre contient vraiment ce qui est demandé (un objet renommé « Diamant » ne passe pas).
 
 ### Mémoire et délais
@@ -271,7 +285,7 @@ ctx.cooldowns.setFromText(account, 'kit:pvp', 'Disponible dans 2h 30m') // lit l
 ```
 
 `ctx.cooldowns` : `remaining`, `ready`, `set`, `setFromText`, `clear`, `parse` (« 1 heure 2 minutes »,
-« Available in 5m 3s », « 01:59:30 »…). Une [planification](scripts.html#planifications) relance votre
+« Available in 5m 3s », « 01:59:30 »…). Une [planification](scripts.html#relancer-un-plugin-automatiquement) relance votre
 plugin pour chaque compte dès que le délai qu'il a noté est passé.
 
 ### Kits
@@ -293,7 +307,7 @@ Les kits réglés dans le profil du serveur se récupèrent aussi sans code.
 
 ### IA locale
 
-Avec `"ai": true` et [Ollama](ia.html#ia-locale-pour-les-plugins) installé :
+Avec `"ai": true` et [Ollama](ia.html#donner-une-ia-locale-aux-plugins) installé :
 
 ```ts
 const resume = await ctx.ai.ask('Résume ces messages : ' + lignes.join('\n'))
@@ -319,7 +333,7 @@ Un plugin tourne dans Node.js, avec **tous ses modules** (`node:fs`, `node:path`
 ## Étape de chaîne
 
 Exportez une `action` en plus (ou à la place) : elle devient une étape **Action d'un plugin** dans les
-[chaînes](scripts.html#chaînes), faite pour chaque compte, bot déjà connecté :
+[chaînes](scripts.html#enchaîner-des-actions), faite pour chaque compte, bot déjà connecté :
 
 ```ts
 import type { Account, Bot, ScriptContext } from '../kairn'
@@ -337,7 +351,7 @@ pour l'étape.
 
 ## Interception (jouer avec un compte)
 
-Exportez `intercept` : quand vous [jouez avec un compte](jouer.html#plugins-dinterception) et cochez
+Exportez `intercept` : quand vous [jouez avec un compte](jouer.html#ajouter-des-plugins-dinterception) et cochez
 votre plugin, il voit passer les paquets entre votre Minecraft et le serveur, et peut les modifier,
 les bloquer ou en envoyer.
 
@@ -370,7 +384,7 @@ export function intercept(proxy: ProxyContext) {
 
 Avec `"type": "profile"`, le plugin lit ce que le serveur affiche à chaque compte et en tire des champs
 (grade, île, argent…), montrés dans l'aperçu des comptes. Il se choisit dans le
-[profil du serveur](serveurs.html#profil-des-comptes).
+[profil du serveur](serveurs.html#afficher-le-profil-des-comptes).
 
 ```ts
 import type { ServerDisplay } from '../kairn'
@@ -385,7 +399,7 @@ export function profile(affichage: ServerDisplay) {
 joueurs (`tab.header`, `tab.footer`), le nom du compte dans cette liste (`name`, souvent avec le grade)
 et l'action bar (`actionBar`). Il tourne dans un bac à sable : pas de fichiers, de réseau, de minuteries
 ni d'outils Kairn, 50 ms au plus, 12 champs au plus. Pour l'argent ou les gemmes, les
-[valeurs suivies](serveurs.html#valeurs-suivies) font souvent la même chose sans code.
+[valeurs suivies](serveurs.html#suivre-largent-les-gemmes-et-autres-valeurs) font souvent la même chose sans code.
 
 ---
 
@@ -404,6 +418,6 @@ ni d'outils Kairn, 50 ms au plus, 12 champs au plus. Pour l'argent ou les gemmes
 - Laissez un peu de temps entre les actions (`ctx.sleep`), comme un joueur.
 - Notez les délais avec `ctx.cooldowns` : vos plugins deviennent planifiables.
 
-{: .warning }
+{: .attention }
 Un plugin a les mêmes droits que Kairn sur votre PC (fichiers, réseau). N'installez que des plugins
 dont vous avez confiance en l'auteur. Les plugins **Officiel** sont signés par l'auteur de Kairn.

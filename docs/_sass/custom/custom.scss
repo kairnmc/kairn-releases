@@ -1,0 +1,745 @@
+// Kairn's guide on just-the-docs: the app's look (src/renderer/src/styles.css, theme.ts) and the
+// components the pages use in raw HTML: .kairn-hero, ol.kairn-steps, .kairn-cards.
+// stylelint-disable selector-no-type, selector-max-type, selector-max-specificity, max-nesting-depth
+
+// Redstone tokens not in the color scheme (theme.ts, PALETTES.redstone and STATE_COLORS).
+$k-panel: #25262b;
+$k-raised: #26282d;
+$k-well: #17181b;
+$k-line2: #35373e;
+$k-box-edge: #5a5d66;
+$k-muted: #a2a4ac;
+$k-faint: #878a93;
+$k-accent: #e5484d;
+$k-accent-hover: #ee5f63;
+$k-accent-deep: #a82d32;
+$k-accent-text: #ff8f92;
+$k-radius-sm: 5px;
+$k-radius-lg: 10px;
+$k-radius-xl: 14px;
+$k-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.22);
+$k-focus: 0 0 0 3px rgba($k-accent, 0.35);
+
+// Callout colors: STATE_COLORS on/join/error, and Lapis' accent for « À savoir » (Redstone has no blue).
+$k-callouts: (
+  astuce: (#4cc38a, #7fd6a8),
+  attention: (#e0a93b, #ebc06a),
+  important: (#f06a6f, #ff9a9d),
+  note: (#4f7dff, #94b0ff),
+);
+
+::selection {
+  background: rgba($k-accent, 0.35);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01";
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+.btn:focus-visible {
+  outline: none;
+  box-shadow: $k-focus;
+}
+
+// ---- Sidebar -------------------------------------------------------------------------------------
+
+.side-bar {
+  border-right: 1px solid $border-color;
+}
+
+.site-title {
+  gap: 0.625rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+
+  &:hover {
+    background-image: none;
+  }
+}
+
+.kairn-site-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: none;
+  image-rendering: pixelated;
+  border-radius: 3px;
+}
+
+.kairn-site-name {
+  font-size: 1.125rem;
+  color: $body-heading-color;
+}
+
+.site-nav {
+  padding: $sp-2 $sp-2 0;
+}
+
+.nav-list .nav-list-item {
+  .nav-list-link {
+    margin: 1px 0;
+    color: $body-text-color;
+    border-radius: $border-radius;
+    transition: background-color 0.12s, color 0.12s;
+
+    @include mq(md) {
+      padding-left: $sp-4;
+    }
+
+    &:hover {
+      color: $body-heading-color;
+      background-image: none;
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+
+    &.active {
+      font-weight: 600;
+      color: $body-heading-color;
+      background-image: none;
+      background-color: $base-button-color;
+      box-shadow: inset 2px 0 0 $k-accent;
+    }
+
+    &.external {
+      color: $link-color;
+    }
+  }
+
+  .nav-list-expander {
+    color: $k-muted;
+    border-radius: $border-radius;
+
+    &:hover {
+      background-image: none;
+      background-color: rgba(255, 255, 255, 0.04);
+    }
+  }
+
+  // Child pages
+  .nav-list .nav-list-item .nav-list-link {
+    color: $nav-child-link-color;
+
+    &.active,
+    &:hover {
+      color: $body-heading-color;
+    }
+  }
+}
+
+.site-footer {
+  color: $k-faint;
+  font-size: 0.75rem !important;
+}
+
+// ---- Header and search ---------------------------------------------------------------------------
+
+.main-header {
+  border-bottom-color: $border-color;
+}
+
+@include mq(md) {
+  .search-input-wrap {
+    overflow: visible;
+  }
+
+  .search-input {
+    top: 0.75rem;
+    left: $gutter-spacing - $sp-3;
+    width: calc(100% - #{2 * ($gutter-spacing - $sp-3)});
+    height: calc(100% - 1.5rem);
+    padding-left: 2.5rem;
+    background-color: $k-panel;
+    border: 1px solid $k-line2;
+    border-radius: $border-radius;
+    transition: border-color 0.12s, box-shadow 0.12s;
+
+    &:hover {
+      border-color: $k-box-edge;
+    }
+  }
+
+  .search-label,
+  .search-active .search-label {
+    padding-left: $gutter-spacing;
+  }
+
+  .search-active .search-input {
+    padding-left: 2.5rem;
+  }
+
+  .search-results {
+    left: $gutter-spacing - $sp-3;
+    margin-top: $sp-1;
+    border: 1px solid $k-line2;
+    border-radius: $k-radius-lg;
+  }
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: $k-accent;
+  box-shadow: $k-focus;
+}
+
+.search-results {
+  box-shadow: $k-shadow;
+}
+
+.search-result:hover,
+.search-result.active {
+  background-color: rgba($k-accent, 0.08);
+}
+
+.search-result-highlight {
+  font-weight: 700;
+  color: $k-accent-text;
+}
+
+.search-button {
+  background-color: $k-accent;
+  box-shadow: $k-shadow;
+}
+
+// ---- Content -------------------------------------------------------------------------------------
+
+.main-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+
+  h1 {
+    font-size: 2rem !important;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    margin-top: 2.25em;
+    font-size: 1.375rem !important;
+  }
+
+  h3 {
+    margin-top: 1.75em;
+    font-size: 1.125rem !important;
+  }
+
+  h4 {
+    font-size: 1rem !important;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  // The first heading of a page right under the top.
+  > h1:first-child,
+  > h2:first-child {
+    margin-top: 0.25em;
+  }
+
+  p,
+  li {
+    max-width: 46rem;
+  }
+
+  strong {
+    font-weight: 650;
+    color: $body-heading-color;
+  }
+
+  a:not(.btn):not(.kairn-card) {
+    text-decoration: underline;
+    text-decoration-color: rgba($link-color, 0.35);
+    text-underline-offset: 0.18em;
+
+    &:hover {
+      text-decoration-color: $link-color;
+    }
+  }
+
+  .anchor-heading,
+  .anchor-heading:hover {
+    text-decoration: none !important;
+  }
+
+  ul > li::before,
+  ol > li::before {
+    color: $k-faint;
+  }
+
+  hr {
+    height: 1px;
+    margin: $sp-7 0;
+    background-color: $border-color;
+  }
+
+  // Screenshots: framed like the app's window.
+  img:not(.kairn-hero-logo):not(.emoji) {
+    display: block;
+    margin: $sp-4 0;
+    border: 1px solid $k-line2;
+    border-radius: $k-radius-lg;
+    box-shadow: $k-shadow;
+  }
+}
+
+// Inline code and blocks
+:not(pre, figure) > code {
+  padding: 0.12em 0.4em;
+  font-size: 0.875em;
+  color: $body-heading-color;
+  background-color: $k-panel;
+  border-color: $k-line2;
+  border-radius: $k-radius-sm;
+}
+
+div.highlighter-rouge,
+figure.highlight {
+  border: 1px solid $border-color;
+  border-radius: $k-radius-lg;
+  overflow: hidden;
+}
+
+div.highlighter-rouge div.highlight,
+figure.highlight pre,
+.highlight {
+  background-color: $k-well;
+}
+
+// The theme frames the inner block too (1px of body text color): the outer frame is enough.
+div.highlighter-rouge div.highlight,
+figure.highlight pre {
+  padding: 0.9rem 1.1rem;
+  border: 0;
+  border-radius: 0;
+}
+
+pre.highlight,
+pre.highlight code,
+figure.highlight pre,
+figure.highlight pre code {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+// Keys, as the app's « Ctrl K » chips
+kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0.1em 0.45em;
+  font-family: $body-font-family;
+  font-size: 0.8em;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $body-heading-color;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: 0.1em;
+  background-color: $base-button-color;
+  border: 1px solid $k-line2;
+  border-bottom-width: 2px;
+  border-radius: $k-radius-sm;
+}
+
+// Tables, as the app's list of accounts
+.table-wrapper {
+  border: 1px solid $border-color;
+  border-radius: $k-radius-lg;
+  box-shadow: none;
+}
+
+table {
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0.65rem 0.9rem;
+  font-size: 0.875rem !important;
+  border-left: 0;
+  border-bottom-color: $border-color;
+}
+
+thead th {
+  font-weight: 600;
+  text-align: left;
+  color: $k-muted;
+  background-color: $k-panel;
+}
+
+tbody tr:hover td {
+  background-color: #222328;
+}
+
+// Buttons, rounded as the app's
+.btn {
+  padding: 0.5em 1.1em;
+  font-weight: 600;
+  color: $body-heading-color;
+  border: 1px solid $k-line2;
+  border-radius: $border-radius;
+  box-shadow: none;
+  transition: background-color 0.12s, border-color 0.12s;
+
+  &:hover {
+    color: $body-heading-color;
+    background-color: #33353c;
+    border-color: $k-box-edge;
+  }
+
+  &:focus,
+  &:focus:hover {
+    box-shadow: $k-focus;
+  }
+}
+
+.btn-primary {
+  color: #fff !important;
+  background-color: $k-accent;
+  background-image: none;
+  border-color: $k-accent;
+
+  &:hover {
+    background-color: $k-accent-hover;
+    background-image: none;
+    border-color: $k-accent-hover;
+  }
+
+  &:active,
+  &.selected {
+    background-color: $k-accent-deep;
+    background-image: none;
+  }
+}
+
+// FAQ: <details><summary>…</summary>…</details>
+details {
+  margin: $sp-3 0;
+  background-color: $k-raised;
+  border: 1px solid $border-color;
+  border-radius: $k-radius-lg;
+  transition: border-color 0.12s;
+
+  &:hover,
+  &[open] {
+    border-color: $k-line2;
+  }
+
+  > summary {
+    position: relative;
+    padding: 0.85rem 2.75rem 0.85rem 1.1rem;
+    font-weight: 600;
+    color: $body-heading-color;
+    cursor: pointer;
+    list-style: none;
+    border-radius: $k-radius-lg;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    // Chevron
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 1.15rem;
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-top: -0.35rem;
+      content: "";
+      border-right: 2px solid $k-muted;
+      border-bottom: 2px solid $k-muted;
+      transform: rotate(45deg);
+      transition: transform 0.15s;
+    }
+  }
+
+  &[open] > summary {
+    border-bottom: 1px solid $border-color;
+    border-radius: $k-radius-lg $k-radius-lg 0 0;
+
+    &::after {
+      margin-top: -0.1rem;
+      transform: rotate(-135deg);
+    }
+  }
+
+  > :not(summary) {
+    margin-right: 1.1rem;
+    margin-left: 1.1rem;
+  }
+
+  > :nth-child(2) {
+    margin-top: 0.85rem;
+  }
+
+  > :last-child {
+    margin-bottom: 0.95rem;
+  }
+}
+
+// Callouts: `{: .astuce }`, `{: .attention }`, `{: .important }`, `{: .note }`
+@each $name, $colors in $k-callouts {
+  $color: nth($colors, 1);
+  $text: nth($colors, 2);
+
+  p.#{$name},
+  blockquote.#{$name},
+  p.#{$name}-title,
+  blockquote.#{$name}-title {
+    padding: 0.85rem 1.1rem;
+    margin: $sp-4 0;
+    color: $body-text-color;
+    background-color: rgba($color, 0.08);
+    border: 1px solid rgba($color, 0.28);
+    border-left: 3px solid $color;
+    border-radius: $border-radius;
+    box-shadow: none;
+
+    &::before {
+      padding-bottom: 0.3rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: $text;
+    }
+
+    a:not(.btn) {
+      color: $text;
+      text-decoration-color: rgba($text, 0.45);
+    }
+
+    code {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// ---- Components ----------------------------------------------------------------------------------
+
+// <div class="kairn-hero">: logo, h1, tagline, buttons.
+.kairn-hero {
+  position: relative;
+  padding: $sp-8 $sp-5 $sp-7;
+  margin: $sp-2 0 $sp-7;
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(ellipse 60% 70% at 50% 0%, rgba($k-accent, 0.16), rgba($k-accent, 0) 70%),
+    linear-gradient(180deg, $k-panel, $sidebar-color);
+  border: 1px solid $k-line2;
+  border-radius: $k-radius-xl;
+
+  // Faint pixel grid, as the mark's cells
+  &::before {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    content: "";
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: radial-gradient(ellipse 70% 80% at 50% 0%, #000, transparent 75%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 80% at 50% 0%, #000, transparent 75%);
+  }
+
+  > * {
+    position: relative;
+  }
+
+  .kairn-hero-logo {
+    display: block;
+    width: 4.5rem;
+    height: 4.5rem;
+    margin: 0 auto $sp-4;
+    image-rendering: pixelated;
+    border-radius: 6px;
+    filter: drop-shadow(0 10px 28px rgba($k-accent, 0.35));
+  }
+
+  h1 {
+    margin: 0 0 $sp-2 !important;
+    font-size: 2.75rem !important;
+    font-weight: 700;
+    line-height: 1.1;
+    color: $body-heading-color;
+    letter-spacing: -0.03em;
+  }
+
+  .kairn-tagline {
+    max-width: 34rem;
+    margin: 0 auto $sp-5;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: $k-muted;
+  }
+
+  .btn {
+    margin: $sp-1;
+    padding: 0.65em 1.35em;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 31.25rem) {
+    padding: $sp-6 $sp-4 $sp-5;
+
+    h1 {
+      font-size: 2.125rem !important;
+    }
+
+    .kairn-tagline {
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: block;
+      margin: $sp-2 0 0;
+    }
+  }
+}
+
+// <ol class="kairn-steps">: <li><strong>Title</strong> text</li>, numbered badges joined by a line.
+.main-content ol.kairn-steps {
+  padding-left: 0;
+  margin: $sp-5 0;
+  counter-reset: kairn-step;
+
+  > li {
+    position: relative;
+    max-width: none;
+    padding: 0 0 $sp-5 3.25rem;
+    margin: 0;
+    color: $body-text-color;
+    counter-increment: kairn-step;
+
+    &::before {
+      position: absolute;
+      top: -0.1rem;
+      left: 0;
+      display: flex;
+      width: 2.25rem;
+      height: 2.25rem;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: $k-accent-text;
+      content: counter(kairn-step);
+      background-color: rgba($k-accent, 0.14);
+      border: 1px solid rgba($k-accent, 0.4);
+      border-radius: 50%;
+    }
+
+    // The line to the next step
+    &:not(:last-child)::after {
+      position: absolute;
+      top: 2.4rem;
+      bottom: 0.3rem;
+      left: calc(1.125rem - 1px);
+      width: 2px;
+      content: "";
+      background-color: $k-line2;
+      border-radius: 1px;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    > strong:first-child {
+      display: block;
+      margin-bottom: 0.15rem;
+      font-size: 1.0625rem;
+      color: $body-heading-color;
+    }
+  }
+}
+
+// <div class="kairn-cards">: <a class="kairn-card"> with an icon, a title and a description.
+.kairn-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: $sp-3;
+  margin: $sp-4 0 $sp-6;
+
+  @media (max-width: 31.25rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-content a.kairn-card,
+a.kairn-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+  padding: $sp-4 1.1rem;
+  color: $k-muted;
+  text-decoration: none;
+  background-color: $k-raised;
+  border: 1px solid $border-color;
+  border-radius: $k-radius-lg;
+  transition: border-color 0.12s, background-color 0.12s, transform 0.12s;
+
+  &:hover {
+    text-decoration: none;
+    background-color: #2a2c32;
+    border-color: rgba($k-accent, 0.55);
+    transform: translateY(-1px);
+  }
+
+  .kairn-card-icon {
+    display: flex;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-bottom: $sp-2;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    line-height: 1;
+    background-color: $base-button-color;
+    border: 1px solid $k-line2;
+    border-radius: $border-radius;
+  }
+
+  strong {
+    font-size: 1rem;
+    color: $body-heading-color;
+  }
+
+  > span:last-child {
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  // One column on phones: the icon beside the text keeps the list short.
+  @media (max-width: 31.25rem) {
+    display: grid;
+    grid-template-columns: 2.25rem 1fr;
+    column-gap: 0.85rem;
+    row-gap: 0.1rem;
+    align-items: start;
+    padding: 0.85rem 1rem;
+
+    .kairn-card-icon {
+      grid-row: 1 / span 2;
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

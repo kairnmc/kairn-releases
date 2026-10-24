@@ -1,0 +1,30 @@
+// Kairn's Redstone palette (src/renderer/src/theme.ts, PALETTES.redstone), on just-the-docs' dark scheme.
+@import "./color_schemes/dark";
+
+$color-scheme: dark;
+$body-font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+$mono-font-family: "Cascadia Mono", Consolas, "SFMono-Regular", Menlo, monospace;
+
+$body-background-color: #1b1c20;
+$sidebar-color: #16171a;
+$search-background-color: #25262b;
+$table-background-color: #1f2024;
+$code-background-color: #17181b;
+$feedback-color: #25262b;
+$border-color: #2a2c31;
+
+$body-text-color: #c9cad0;
+$body-heading-color: #eeeef0;
+$search-result-preview-color: #a2a4ac;
+$nav-child-link-color: #a2a4ac;
+
+$link-color: #ff8f92;
+$btn-primary-color: #e5484d;
+$base-button-color: #2c2e34;
+
+// The app's radius (antd borderRadius) and its state colors (STATE_COLORS), used by labels and callouts.
+$border-radius: 7px;
+$green-300: #4cc38a;
+$yellow-300: #e0a93b;
+$red-300: #f06a6f;
+$blue-300: #4f7dff;

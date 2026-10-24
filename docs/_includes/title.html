@@ -1,0 +1,7 @@
+{%- comment -%}
+  Overrides just-the-docs' title.html: the pixel mark next to the name, as in the app's sidebar.
+{%- endcomment -%}
+{% if site.logo %}
+  <img class="kairn-site-logo" src="{{ site.logo | relative_url }}" alt="" width="24" height="24">
+{% endif %}
+<span class="kairn-site-name">{{ site.title }}</span>
