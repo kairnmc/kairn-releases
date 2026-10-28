@@ -1,0 +1,95 @@
+{
+  "name": "Émeraudes au home",
+  "version": "0.6.3",
+  "description": "Sunaria et BloodSymphony : tout l'argent de chaque compte en blocs d'émeraude (achetés au /shop), rangés dans les coffres d'un home qui sont dans le claim de sa faction. Monte en terre jusqu'aux coffres en hauteur, puis la recasse.",
+  "type": "script",
+  "main": "index.ts",
+  "servers": [
+    "*.sunaria.fr",
+    "*.bloodsymphony.com",
+    "*.bloodsymphony.fr"
+  ],
+  "settings": [
+    {
+      "key": "home",
+      "label": "Home",
+      "type": "text",
+      "default": "",
+      "required": true,
+      "help": "Le bot y va par /home <nom>. Seuls les coffres autour de ce home et dans le claim de la faction du compte sont utilisés."
+    },
+    {
+      "key": "serveur",
+      "label": "Serveur",
+      "type": "select",
+      "options": ["auto", "Sunaria", "BloodSymphony"],
+      "default": "auto",
+      "help": "auto : reconnu d'après le tab, le scoreboard ou les messages d'arrivée."
+    },
+    {
+      "key": "acheter",
+      "label": "Acheter avec l'argent du compte",
+      "type": "boolean",
+      "default": true,
+      "help": "Décoché : range seulement les blocs d'émeraude que le compte porte déjà."
+    },
+    {
+      "key": "plafond",
+      "label": "Argent à dépenser au plus, par compte",
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "help": "0 : tout l'argent. Pour un premier essai, une petite somme."
+    },
+    {
+      "key": "voyages",
+      "label": "Tours achat + rangement au plus, par compte",
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "max": 100000,
+      "integer": true,
+      "help": "0 : sans limite. Un tour : acheter au /shop ce que l'inventaire peut porter (environ 2 300 blocs), puis le ranger. Le compte s'arrête de lui-même sans argent, au plafond, sans coffre libre ou après un tour sans achat ni dépôt."
+    },
+    {
+      "key": "rayon",
+      "label": "Distance des coffres au home (blocs)",
+      "type": "number",
+      "default": 32,
+      "min": 8,
+      "max": 48,
+      "integer": true
+    },
+    {
+      "key": "terre",
+      "label": "Terre au plus pour monter",
+      "type": "number",
+      "default": 64,
+      "min": 0,
+      "max": 128,
+      "integer": true,
+      "help": "Achetée au shop avant les émeraudes, seulement si un coffre est en hauteur ; recassée et gardée pour le tour suivant. 0 : jamais de construction."
+    },
+    {
+      "key": "claim",
+      "label": "Vérifier le claim de la faction",
+      "type": "boolean",
+      "default": true,
+      "help": "Décoché : tous les coffres dans le rayon sont remplis, sans regarder à qui est le chunk. Attention : un coffre hors du claim (zone libre, allié) peut être ouvert par d'autres joueurs, qui prendraient les émeraudes."
+    },
+    {
+      "key": "confiance",
+      "label": "Doubles coffres à cheval sur un chunk non lu",
+      "type": "boolean",
+      "default": true,
+      "help": "Pour un mur de coffres sur la limite de deux claims, si le bot ne peut pas entrer dans l'autre chunk : le double coffre est utilisé si sa moitié côté home est dans votre claim. Décochez si l'autre chunk peut ne pas être à votre faction (zone libre, allié) : on pourrait y prendre les émeraudes."
+    },
+    {
+      "key": "journal",
+      "label": "Journal détaillé",
+      "type": "boolean",
+      "default": false,
+      "help": "À cocher si on vous demande le journal : chaque chunk lu, chaque coffre écarté et pourquoi. Copiez ensuite le journal du lancement."
+    }
+  ]
+}
