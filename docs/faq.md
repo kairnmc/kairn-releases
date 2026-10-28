@@ -26,6 +26,14 @@ Voir [Connecter un compte Microsoft](comptes.html#connecter-un-compte-microsoft)
 </details>
 
 <details markdown="1">
+<summary>La page Microsoft reprend le compte précédent</summary>
+
+Depuis la version 0.2.0, la page Microsoft s'ouvre dans une fenêtre de Kairn où aucun compte n'est
+connecté : mettez Kairn à jour (voir [Garder Kairn à jour](parametres.html#garder-kairn-à-jour)). Avant, elle s'ouvrait dans votre navigateur, qui
+gardait le dernier compte Microsoft utilisé.
+</details>
+
+<details markdown="1">
 <summary>Le kit ne se récupère pas</summary>
 
 Ouvrez le profil du serveur, section **Kits**, et utilisez **Essayer sur** un compte en ligne : le
@@ -59,6 +67,15 @@ pièces à la fois (carte mère, disque, processeur…), si.
 Kairn n'a pas pu vérifier votre accès. La raison est affichée dessous : pas de connexion, un
 pare-feu, un proxy ou un VPN qui bloque GitHub… Corrigez-la puis **Réessayer**. Kairn marche jusqu'à
 7 jours sans connexion.
+</details>
+
+<details markdown="1">
+<summary>« Vérification de l’accès impossible »</summary>
+
+Kairn n'a pas pu lire l'identifiant de ce PC ou l'état de votre accès. La cause est affichée en
+rouge ; le plus souvent, Windows a mis trop de temps à répondre : **redémarrez le PC**, puis
+**Réessayer**. Si la cause parle d'un antivirus, autorisez Kairn (il lit le matériel du PC avec
+PowerShell). Si l'erreur persiste, **Copier** et envoyez-la à l'auteur de Kairn.
 </details>
 
 <details markdown="1">

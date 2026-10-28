@@ -42,11 +42,15 @@ La connexion Microsoft, elle, ne passe pas par le proxy.
 
 Pour un compte premium : **Se connecter à Microsoft**, puis dans la fenêtre :
 
-1. **Ouvrir la page Microsoft** (ou copiez son adresse) ;
+1. **Ouvrir la page Microsoft** : elle s'ouvre dans une fenêtre de Kairn ;
 2. saisissez le code affiché (bouton **Copier**) ;
 3. connectez-vous avec le compte Microsoft voulu.
 
-La fenêtre se ferme toute seule une fois connecté.
+Les deux fenêtres se ferment toutes seules une fois connecté.
+
+{: .astuce }
+Aucun compte Microsoft n'est connecté dans cette fenêtre, même si vous l'êtes dans votre navigateur :
+connectez vos comptes premium l'un après l'autre, sans vous déconnecter ni vider le cache.
 
 {: .attention }
 Le code expire au bout de quelques minutes : recommencez s'il a expiré.
