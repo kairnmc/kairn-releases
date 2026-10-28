@@ -48,11 +48,44 @@ La page **Lancements** montre tout ce qui a été lancé depuis l'ouverture de K
 
 - **Pause** / **Reprendre**, **Arrêter** ;
 - certains scripts permettent de **passer** un compte en cours ;
+- l'**œil** à côté d'un compte en cours montre ses menus et son inventaire en direct (voir
+  [l'onglet Menus](comptes.html#longlet-menus)) ;
 - un script peut **poser une question** : elle s'affiche dans une fenêtre (choix ou réponse libre) ;
   **Plus tard** la laisse en attente dans Lancements et Activité.
 
 {: .astuce }
 Le compteur sur **Activité** indique ce qui attend votre réponse.
+
+## Plugins officiels
+
+### Émeraudes au home
+
+Pour **Sunaria** et **BloodSymphony** : l'argent de chaque compte devient des blocs d'émeraude, achetés
+au `/shop` et rangés dans les coffres d'un home, dans le claim de la faction du compte.
+
+À chaque **tour**, le bot achète ce que son inventaire peut porter (environ 2 300 blocs), puis le range
+dans les coffres, une stack par shift-clic, toutes d'un coup. Un coffre en hauteur est atteint avec de
+la terre achetée pour l'occasion, recassée ensuite.
+
+| Réglage | Ce qu'il fait |
+|---|---|
+| **Home** | Le home où le bot va (`/home <nom>`). Obligatoire. |
+| **Acheter avec l'argent du compte** | Décoché : range seulement les blocs que le compte porte déjà. |
+| **Argent à dépenser au plus** | 0 : tout l'argent. Pour un premier essai, une petite somme. |
+| **Tours achat + rangement au plus** | 0 (par défaut) : sans limite. Le compte s'arrête de lui-même sans argent, au plafond, sans coffre libre, ou après un tour sans achat ni dépôt. |
+| **Distance des coffres au home** | Jusqu'où chercher les coffres (8 à 48 blocs). |
+| **Terre au plus pour monter** | 0 : jamais de construction. |
+| **Vérifier le claim de la faction** | Coché (par défaut) : seuls les coffres dans le claim de la faction sont remplis. |
+| **Doubles coffres à cheval sur un chunk non lu** | Coché (par défaut) : un double coffre dont une moitié est dans le claim est utilisé même si le bot ne peut pas entrer dans le chunk de l'autre moitié (un mur de coffres sur la limite de deux claims). |
+| **Journal détaillé** | Chaque chunk lu, chaque coffre écarté et pourquoi. À cocher si on vous demande le journal. |
+
+{: .attention }
+Décocher **Vérifier le claim** remplit aussi les coffres hors du claim (zone libre, allié) : d'autres
+joueurs peuvent alors les ouvrir et prendre les émeraudes.
+
+{: .note }
+« Aucun coffre du claim de la faction autour du home » : cochez **Journal détaillé**, relancez, et
+regardez les lignes « écarté » : elles disent pourquoi chaque coffre a été laissé.
 
 ## Relancer un plugin automatiquement
 

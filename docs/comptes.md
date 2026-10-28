@@ -90,14 +90,32 @@ Cochez des lignes : une barre apparaît avec **Connecter**, **Déconnecter**, **
 
 ## Voir la fiche d'un compte
 
-Un clic sur un compte ouvre sa fiche, à droite. Elle a quatre onglets :
+Un clic sur un compte ouvre sa fiche, à droite. Elle a cinq onglets :
 
 - **Aperçu** : ce que le serveur affiche sur ce compte (grade, argent…), ses kits, ses derniers messages ;
 - **Console** : le chat du bot en direct ; écrivez un message ou une `/commande` (le compte doit
   être en ligne) ;
+- **Menus** : ce que le bot voit, en direct, dessiné comme dans le jeu (voir ci-dessous) ;
 - **Kits** : chaque kit, prêt ou dans combien de temps, et combien de fois il a été récupéré ;
 - **Stats** : temps en ligne (total et 7 jours), kits, dons, échanges, objets reçus, expulsions,
   déconnexions, et les derniers incidents.
+
+### L'onglet Menus
+
+Quand le compte est en ligne, l'onglet **Menus** montre :
+
+- le **menu ouvert** par le bot (un coffre, le `/shop`, un kit…), avec son titre ;
+- son **inventaire** et sa barre d'objets, la case en main encadrée ;
+- l'objet qu'il tient **sur le curseur**, s'il en a un ;
+- ses **derniers clics** (shift-clic, clic gauche…) avec l'heure et la case visée ; la case du dernier
+  clic clignote.
+
+Passez la souris sur un objet pour lire son nom et sa description. L'onglet ne fait que regarder : il
+ne clique jamais à la place du bot. Il fonctionne aussi pendant qu'un script utilise le compte.
+
+{: .astuce }
+Pour comprendre ce que fait un script, ouvrez l'onglet Menus de son compte pendant qu'il tourne, ou
+cliquez sur l'**œil** à côté du compte dans la page **Lancements**.
 
 ## Ranger ses comptes avec des tags
 
