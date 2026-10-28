@@ -104,6 +104,9 @@ Un clic sur un compte ouvre sa fiche, à droite. Elle a cinq onglets :
 
 Quand le compte est en ligne, l'onglet **Menus** montre :
 
+- sa **vie**, sa **faim** et son **armure**, comme au-dessus de la barre d'objets du jeu, l'**objet en
+  main**, son niveau, sa position et ses effets de potion (avec le temps restant) ;
+- les 4 pièces d'armure qu'il porte ;
 - le **menu ouvert** par le bot (un coffre, le `/shop`, un kit…), avec son titre ;
 - son **inventaire** et sa barre d'objets, la case en main encadrée ;
 - l'objet qu'il tient **sur le curseur**, s'il en a un ;
@@ -116,6 +119,22 @@ ne clique jamais à la place du bot. Il fonctionne aussi pendant qu'un script ut
 {: .astuce }
 Pour comprendre ce que fait un script, ouvrez l'onglet Menus de son compte pendant qu'il tourne, ou
 cliquez sur l'**œil** à côté du compte dans la page **Lancements**.
+
+### La vue 3D
+
+Le bouton **Vue 3D** de l'onglet Menus (ou l'**œil** dans **Lancements**) ouvre une grande fenêtre :
+
+- à gauche, le **monde autour du bot** en 3D : **Ses yeux** montre ce qu'il regarde, **Autour** une
+  caméra que vous tournez autour de lui (glisser pour tourner, clic droit pour déplacer, molette pour
+  zoomer). Le bot et son pseudo restent visibles à travers les blocs ;
+- en bas à gauche, le **chat** du serveur, avec un champ pour écrire un message ou une `/commande` ;
+- à droite, ses menus, son inventaire, sa vie, sa faim et son armure.
+
+La distance de vue (2 à 8 chunks) se règle en haut à droite : plus loin, c'est plus long à charger.
+
+{: .note }
+La vue 3D existe pour les serveurs **1.8** seulement. Les laines et vitres colorées y paraissent
+blanches, et certains blocs (escaliers…) n'ont pas toujours la bonne orientation.
 
 ## Ranger ses comptes avec des tags
 
